@@ -1,0 +1,31 @@
+.searchBlockMainDiv{
+    position: relative;
+}
+.searchInput {
+    width: 30vw;
+    height: 30px;
+    padding: 2px 30px;
+    font-size: 18px;
+    margin: 2px 1%;
+}
+
+.goBtn {
+    height: 38px;
+    padding: 2px 30px;
+    font-size: 18px;
+    color: rgb(42, 93, 233);
+}
+.serchList {
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 0px 0px 6px 6px;
+    width: 30vw;
+    padding: 2px 30px 30px 30px;
+    font-size: 18px;
+    margin: 0px 1%;
+    background-color: white;
+}
+
+.singleSearchUser{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.438);
+}

@@ -1,0 +1,40 @@
+body {   
+     background-color: rgb(240, 255, 248);
+}
+.main_global_div {
+    
+    padding: 0 30px 30px 30px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.addBtn {
+    width: 20vw;
+    min-width: 100px;
+    height: 30px;
+    background-color: rgb(10, 25, 53);
+    margin: 20px 1%;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.1s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.addBtn:hover {
+    transform: translateY(3px);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.356), 0 6px 20px 0 rgba(0, 0, 0, 0.301);
+}
+
+.addBtn:active {
+    transform: translateY(-1px);
+    background-color: yellow;
+    border: 1px solid yellow;
+}

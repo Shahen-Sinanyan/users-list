@@ -1,0 +1,63 @@
+.globalAddDiv {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondGlobDiv {
+    width: 50vw;
+    height: 70vh;
+    background-color: rgb(123, 136, 148);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.inputsParent {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.inputsParent > input {
+    padding: 4px;
+    width: 90%;
+}
+
+.buttonsParent {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
+
+.button {
+    width: 20vw;
+    min-width: 100px;
+    height: 30px;
+    background-color: rgb(3, 0, 185);
+    margin: 20px 1%;
+    border: 1px solid rgb(3, 0, 185);
+    border-radius: 4px;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.1s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+    transform: translateY(3px);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.356), 0 6px 20px 0 rgba(0, 0, 0, 0.301);
+}
+
+.button:active {
+    transform: translateY(-1px);
+    background-color: rgb(124, 124, 6);
+    border: 1px solid yellow;
+}
