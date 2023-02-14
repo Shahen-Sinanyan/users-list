@@ -4,7 +4,7 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 
 import { setSortedUsers } from "../../features/users/usersSlice";
 
-import { TUsersList, User, TSortMethod } from "../../types";
+import { TUsersList, User } from "../../types";
 
 function Searching() {
   const users = useAppSelector((state) => state.users.usersData) || [];
@@ -50,13 +50,21 @@ function Searching() {
         className="searchInput"
         placeholder="Search by name or country"
       />
-      <button className="goBtn" disabled={inputValue.trim() ? false : true} onClick={handleGo}>
+      <button
+        className="goBtn"
+        disabled={inputValue.trim() ? false : true}
+        onClick={handleGo}
+      >
         Go!
       </button>
       {!!searched.length && (
         <div className="serchList">
           {searched.map((user) => {
-            return <div key={user.phone + user.name} className='singleSearchUser'>{user.name}</div>;
+            return (
+              <div key={user.phone + user.name} className="singleSearchUser">
+                {user.name}
+              </div>
+            );
           })}
         </div>
       )}

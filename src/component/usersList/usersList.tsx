@@ -1,7 +1,6 @@
-import React from "react";
 import { useRef, useState } from "react";
 
-import { TUsersList, User, TSortMethod } from "../../types";
+import { TSortMethod } from "../../types";
 
 import { setSortedUsers } from "../../features/users/usersSlice";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
@@ -23,9 +22,6 @@ function UsersList() {
     fromUp: true,
     fromDown: false,
   });
-
-  const nameRef = useRef<HTMLTableHeaderCellElement>(null);
-  const numberrangeRef = useRef<HTMLTableHeaderCellElement>(null);
 
   const sortByName = () => {
     if (!sortMethod.byName) {
@@ -85,21 +81,21 @@ function UsersList() {
         <table>
           <thead>
             <tr className="tr">
-              <th onClick={sortByName} className='active'>
+              <th onClick={sortByName} className="active">
                 name{" "}
                 <img
                   src={sortMethod.byName ? (sortMethod.fromUp ? up : down) : ""}
-                  className='arrow'
+                  className="arrow"
                 />
               </th>
               <th>phone</th>
-              <th onClick={sortByEmail} className='active'>
+              <th onClick={sortByEmail} className="active">
                 email{" "}
                 <img
                   src={
                     sortMethod.byEmail ? (sortMethod.fromUp ? up : down) : ""
                   }
-                  className='arrow'
+                  className="arrow"
                 />
               </th>
               <th>country</th>

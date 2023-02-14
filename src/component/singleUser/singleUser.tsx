@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { useAppSelector } from "../../app/hooks";
 
-import { User } from "../../types";
 function SingleUser() {
   const users = useAppSelector((state) => state.users.usersData) || [];
   const [user, setUser] = useState<any>({});
