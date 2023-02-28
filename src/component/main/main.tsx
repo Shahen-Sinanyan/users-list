@@ -5,7 +5,7 @@ import Searching from "../searching/seraching";
 
 import { useNavigate } from "react-router-dom";
 
-import {  useAppDispatch } from "../../app/hooks";
+import { useAppDispatch } from "../../app/hooks";
 import { localStorageUsers } from "../../features/users/usersSlice";
 
 function Main() {

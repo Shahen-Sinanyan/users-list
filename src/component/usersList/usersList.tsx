@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { TSortMethod } from "../../types";
 
@@ -6,6 +6,7 @@ import { setSortedUsers } from "../../features/users/usersSlice";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 
 import { useNavigate } from "react-router-dom";
+
 import up from "../../assets/up.png";
 import down from "../../assets/down.png";
 
@@ -80,9 +81,9 @@ function UsersList() {
       ) : (
         <table>
           <thead>
-            <tr className="tr">
+            <tr>
               <th onClick={sortByName} className="active">
-                name{" "}
+                name
                 <img
                   src={sortMethod.byName ? (sortMethod.fromUp ? up : down) : ""}
                   className="arrow"
@@ -90,11 +91,9 @@ function UsersList() {
               </th>
               <th>phone</th>
               <th onClick={sortByEmail} className="active">
-                email{" "}
+                email
                 <img
-                  src={
-                    sortMethod.byEmail ? (sortMethod.fromUp ? up : down) : ""
-                  }
+                  src={sortMethod.byEmail ? (sortMethod.fromUp ? up : down) : ""}
                   className="arrow"
                 />
               </th>

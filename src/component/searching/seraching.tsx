@@ -48,12 +48,12 @@ function Searching() {
         value={inputValue}
         onChange={(e) => handleInputValue(e)}
         className="searchInput"
-        placeholder="Search by name or country"
+        placeholder="Search by name"
       />
       <button
-        className="goBtn"
-        disabled={inputValue.trim() ? false : true}
         onClick={handleGo}
+        disabled={inputValue.trim() ? false : true}
+        className="goBtn"
       >
         Go!
       </button>

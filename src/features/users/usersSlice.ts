@@ -24,6 +24,7 @@ export const localStorageUsers = createAsyncThunk(
 export const usersSlice = createSlice({
   name: "users",
   initialState,
+  
   reducers: {
     setSortedUsers: (state, action) => {
       state.sortedUsers = action.payload;

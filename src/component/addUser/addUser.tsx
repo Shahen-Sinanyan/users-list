@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setSortedUsers } from "../../features/users/usersSlice";
 
 import { useNavigate } from "react-router-dom";
 
 import { User } from "../../types";
+
 function AddUser() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -13,9 +14,9 @@ function AddUser() {
   const [numberrange, setNumberrange] = useState(0);
 
   const dispatch = useAppDispatch();
-  // const sortedUsers = useAppSelector((state) => state.users.sortedUsers);
   const allUsers = useAppSelector((state) => state.users.usersData);
 
+  const emailRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
   const handleCancel = () => {
@@ -23,6 +24,7 @@ function AddUser() {
   };
 
   const handleSubmit = () => {
+    let emailCheck: string = "";
     const newUser: User = {
       name,
       phone,
@@ -43,6 +45,13 @@ function AddUser() {
       case country.trim(): {
         return alert("fill all inputs");
       }
+    }
+    emailCheck =
+      allUsers.find((user: User) => user.email === newUser.email)?.email || "";
+    if (emailCheck) {
+      setEmail("");
+      emailRef.current!.focus();
+      return alert(`${email} email already exists`);
     }
     const newUsersList = [...allUsers, newUser];
     dispatch(setSortedUsers(newUsersList));
@@ -68,9 +77,10 @@ function AddUser() {
             placeholder="phone"
           />
           <input
+            ref={emailRef}
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            type="email"
             placeholder="email"
           />
           <input

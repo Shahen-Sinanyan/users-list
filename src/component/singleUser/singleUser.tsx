@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -31,7 +31,7 @@ function SingleUser() {
             <span>numberrange</span>: {user.numberrange}
           </p>
         </div>
-        <button onClick={() => navigate("/")}>Back</button>
+        <button className='backBtn' onClick={() => navigate("/")}>Back</button>
       </div>
     </div>
   );
